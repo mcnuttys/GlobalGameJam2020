@@ -25,12 +25,14 @@ public class EnemyBullet : Bullet
             Player p = collision.transform.GetComponent<Player>();
 
             p.health -= 10.0f;
+
         }
         else if(collision.transform.GetComponent<Wall>())
         {
             Wall w = collision.transform.GetComponent<Wall>();
 
             w.health -= 10.0f;
+            Destroy(gameObject);
         }
     }
 }
