@@ -16,7 +16,7 @@ public class ShootingEnemy : PlayerTargetingEnemy
     {
         rb = GetComponent<Rigidbody2D>();
         wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
-        players = GameObject.FindObjectsOfType<Player>();
+        
 
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
@@ -26,23 +26,26 @@ public class ShootingEnemy : PlayerTargetingEnemy
     // Update is called once per frame
     void Update()
     {
+        players = GameObject.FindObjectsOfType<Player>();
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
         if (shootTimer < 0.0f)
         {
             Shoot();
-            shootTimer = 0.5f;
+            shootTimer = 0.3f;
         }
 
         //start the timer
         shootTimer -= Time.deltaTime;
+
+        Death();
     }
 
     void Shoot()
     {
         Player player = FindNearestPlayer();
 
-        if (Vector2.Distance(player.Position, transform.position) < shootDistance)
+        if (Vector2.Distance(player.Position, currentPosition) < shootDistance)
         {
             //get the direction of the player closest to the enemy
             Vector2 direction = (player.Position - currentPosition).normalized;

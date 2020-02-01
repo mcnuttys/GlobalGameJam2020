@@ -28,6 +28,8 @@ public class BaseEnemy : MonoBehaviour
     {
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
+        Debug.Log(health);
+
         //check if the enemy is still alive
         Death();
     }
@@ -51,7 +53,7 @@ public class BaseEnemy : MonoBehaviour
         {
             Wall w = collision.transform.GetComponent<Wall>();
 
-            w.health -= 10;
+            w.health -= 10.0f;
 
             Destroy(gameObject);
         }
@@ -60,7 +62,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void Death()
     {
-        if(health == 0.0f)
+        if(health <= 0.0f)
         {
             Destroy(gameObject);
         }
