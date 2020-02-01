@@ -61,9 +61,4 @@ public class PlayerTargetingEnemy : BaseEnemy
         return p;
     }
 
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(currentPosition, targetDistance);
-    }
 }
