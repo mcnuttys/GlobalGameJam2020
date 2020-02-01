@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &678333675
 Transform:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   wall: {fileID: 1372735663}
   players: []
   targetDistance: 1000
-  fireRate: 4
+  fireRate: 5
   bullet: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea, type: 3}
   bulletCount: 25
   bulletOffset: 0.7
@@ -452,6 +452,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 1837393077}
   p2: {fileID: 84301825}
+  cameraManager: {fileID: 1694021632}
+  center: {fileID: 1315992047}
   p1Cam: {fileID: 1842942774}
   p2Cam: {fileID: 162024838}
 --- !u!4 &770888838
@@ -938,6 +940,7 @@ MonoBehaviour:
   centerCam: {fileID: 1315992047}
   zOffset: -10
   splitDistance: 15
+  split: 0
 --- !u!1 &1728457939
 GameObject:
   m_ObjectHideFlags: 0
