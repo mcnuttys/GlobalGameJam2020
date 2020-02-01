@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     float buffTimeElapsed = 0;
 
 
-    float respawnTime;
+    [SerializeField] float respawnTime;
     float timeBeforeRespawnElapsed;
+    [SerializeField] SpriteRenderer sprite;
 
-    bool isDead;
+    public bool isDead;
 
     private PlayerMovement pm;
     private float fireTimer;
@@ -65,6 +66,7 @@ public class Player : MonoBehaviour
                 isDead = false;
                 timeBeforeRespawnElapsed = 0;
                 health = 100f;
+                sprite.color = Color.white;
             }
         }
         else
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
             //Prevent the player from moving
             pm.enabled = false;
             isDead = true;
+            sprite.color = new Color(51,51,51);
         }
     }
 
@@ -91,22 +94,24 @@ public class Player : MonoBehaviour
         // Make sure that the fire direction is normalized.
         direction = direction.normalized;
 
-        if (fireTimer <= 0)
+        if (!isDead)    //Dont allow player to shoot if theyre dead
         {
-            // Shoot code.
-            // Create the bullet.
-            GameObject bullet = Instantiate(bulletPrefab, Position + direction * bulletOffset, Quaternion.FromToRotation(Vector3.up, direction));
+            if (fireTimer <= 0)
+            {
+                // Shoot code.
+                // Create the bullet.
+                GameObject bullet = Instantiate(bulletPrefab, Position + direction * bulletOffset, Quaternion.FromToRotation(Vector3.up, direction));
 
-            // Get the bullets physics component.
-            Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
+                // Get the bullets physics component.
+                Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
 
-            // Set the bullets velocity.
-            brb.velocity = direction * bulletSpeed;
+                // Set the bullets velocity.
+                brb.velocity = direction * bulletSpeed;
 
-            //At the end of shooting, make sure to reset the firerate.
-            fireTimer = firerate;
+                //At the end of shooting, make sure to reset the firerate.
+                fireTimer = firerate;
+            }
         }
-
         lastDirection = direction;
     }
 
