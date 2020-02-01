@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7583777118486477300}
   m_Layer: 0
-  m_Name: Googly Eye (2)
+  m_Name: Googly Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7583777118486477307}
   m_LocalRotation: {x: -0, y: -0, z: 0.38268283, w: 0.9238798}
-  m_LocalPosition: {x: -4.34, y: -6.3, z: -148.04053}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_Children:
   - {fileID: 7583777118793358404}
   m_Father: {fileID: 0}
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 15.95, y: 15.96}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

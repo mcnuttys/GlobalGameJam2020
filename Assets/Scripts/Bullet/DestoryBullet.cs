@@ -9,7 +9,8 @@ public class DestoryBullet : Bullet
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        Destroy(gameObject,1f);
     }
 
     // Update is called once per frame
@@ -58,6 +59,7 @@ public class DestoryBullet : Bullet
         {
             Destroy(gameObject);
         }
+        base.OnCollisionEnter2D(collision);
         
     }
 }

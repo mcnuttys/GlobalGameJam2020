@@ -1390,10 +1390,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  bulletOffset: 0
+  bulletOffset: 0.1
   firerate: 0.01
   bulletSpeed: 15
-  bulletPrefab: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea,
+  bulletPrefab: {fileID: 2403600650773644916, guid: 5e5e94c6ee36b794fb04f3784919ebb1,
     type: 3}
   respawnTime: 20
   sprite: {fileID: 1757540941}
