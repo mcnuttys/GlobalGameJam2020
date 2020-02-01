@@ -16,6 +16,12 @@ public class Player : MonoBehaviour
     float buffTime = 0;
     float buffTimeElapsed = 0;
 
+
+    float respawnTime;
+    float timeBeforeRespawnElapsed;
+
+    bool isDead;
+
     private PlayerMovement pm;
     private float fireTimer;
 
@@ -27,6 +33,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         pm = GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
@@ -45,14 +52,34 @@ public class Player : MonoBehaviour
             }
         }
 
-        Death();
+        //Check if the player has died
+        if (isDead)
+        {
+            timeBeforeRespawnElapsed += Time.deltaTime;
+            if (timeBeforeRespawnElapsed >= respawnTime)
+            {
+                //"respawn" the player
+                transform.position = Vector2.zero;
+                pm.enabled = true;
+                //Reset player paramters
+                isDead = false;
+                timeBeforeRespawnElapsed = 0;
+                health = 100f;
+            }
+        }
+        else
+        {
+            Death();
+        }
     }
 
     public void Death()
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
+            //Prevent the player from moving
+            pm.enabled = false;
+            isDead = true;
         }
     }
 
@@ -139,4 +166,5 @@ public class Player : MonoBehaviour
             buffTimeElapsed = 0;
         }
     }
+
 }
