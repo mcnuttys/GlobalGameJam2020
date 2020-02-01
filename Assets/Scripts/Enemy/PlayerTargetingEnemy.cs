@@ -20,6 +20,8 @@ public class PlayerTargetingEnemy : BaseEnemy
     // Update is called once per frame
     void Update()
     {
+        players = GameObject.FindObjectsOfType<Player>();
+
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
         Death();
@@ -31,7 +33,7 @@ public class PlayerTargetingEnemy : BaseEnemy
 
         Vector2 move = Vector2.zero;
 
-        if(Vector2.Distance(p.Position, transform.position) < targetDistance)
+        if(Vector2.Distance(p.Position, currentPosition) < targetDistance)
         {
             move = (p.Position - currentPosition).normalized * speed * Time.deltaTime;
         }
@@ -39,6 +41,8 @@ public class PlayerTargetingEnemy : BaseEnemy
         {
            move = (wallPosition - currentPosition).normalized * speed * Time.deltaTime;
         }
+
+        transform.up = Vector2.Lerp(transform.up, move.normalized, 5 * Time.deltaTime);
 
         rb.MovePosition(move + currentPosition);
     }

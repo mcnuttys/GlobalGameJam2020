@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Player Stats")]
-    public float health = 5f;
+    public float health = 100f;
     public float bulletOffset = 0.6f;
     public float firerate = 0.5f;
     public float bulletSpeed = 5f;
@@ -43,6 +43,16 @@ public class Player : MonoBehaviour
             {
                 RemoveBuff();
             }
+        }
+
+        Death();
+    }
+
+    public void Death()
+    {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

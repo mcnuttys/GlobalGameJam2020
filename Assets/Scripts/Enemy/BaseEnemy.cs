@@ -21,14 +21,14 @@ public class BaseEnemy : MonoBehaviour
         wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
 
         currentPosition = new Vector2(transform.position.x, transform.position.y);
+
+        rb.angularVelocity = Random.Range(100, 500);
     }
 
     // Update is called once per frame
     void Update()
     {
         currentPosition = new Vector2(transform.position.x, transform.position.y);
-
-        Debug.Log(health);
 
         //check if the enemy is still alive
         Death();
