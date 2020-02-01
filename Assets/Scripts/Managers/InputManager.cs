@@ -18,10 +18,10 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         // Set the keyboard players input.
-        p1.SetDirection(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        p1.SetDirection(new Vector2(Input.GetAxis("KeyboardHorizontal"), Input.GetAxis("KeyboardVertical")));
 
         // set the controller players input. (since no input just follow the other player.
-        
+        p2.SetDirection(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
 
         // If we get the players shoot key then we want to fire.
         if (Input.GetMouseButton(0))
@@ -36,20 +36,15 @@ public class InputManager : MonoBehaviour
             // Call p1's fire code.
             p1.Fire(dir);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetAxis("Joy2Fire") != 0)
         {
-            Camera c = (cameraManager.split) ? p2Cam : center;
-
-            Vector2 mPos = c.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dir = mPos - p2.Position;
-            
             // Call p2's fire code.
-            p2.Fire(dir);
+            p2.Fire(new Vector2(Input.GetAxis("Joy2Horizontal"), Input.GetAxis("Joy2Vertical")));
         }
     }
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(p1Cam.ScreenToWorldPoint(Input.mousePosition), 0.25f);
+        Gizmos.DrawWireSphere(p2.Position + new Vector2(Input.GetAxis("Joy2Horizontal"), Input.GetAxis("Joy2Vertical")), 0.25f);
     }
 }

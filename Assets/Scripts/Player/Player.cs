@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     public Vector2 Position { get { return transform.position; } }
 
+    private Vector2 lastDirection = new Vector2(1, 0);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class Player : MonoBehaviour
 
     public virtual void Fire(Vector2 direction)
     {
+        if (direction.magnitude < 0.1f)
+            direction = lastDirection;
+
         // Make sure that the fire direction is normalized.
         direction = direction.normalized;
 
@@ -48,6 +53,8 @@ public class Player : MonoBehaviour
             //At the end of shooting, make sure to reset the firerate.
             fireTimer = firerate;
         }
+
+        lastDirection = direction;
     }
 
     public void SetDirection(Vector2 direction)
