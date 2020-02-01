@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Vector2 mPos = p2Cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dir = mPos - p1.Position;
+            Vector2 dir = mPos - p2.Position;
 
             // Call p2's fire code.
             p2.Fire(dir);
