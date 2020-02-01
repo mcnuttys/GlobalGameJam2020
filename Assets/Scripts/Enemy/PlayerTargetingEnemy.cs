@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTagertEnemy : BaseEnemy
+public class PlayerTargetingEnemy : BaseEnemy
 {
     public Player[] players;
     public float targetDistance = 5;
