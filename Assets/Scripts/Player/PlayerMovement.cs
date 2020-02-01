@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
 
+    public Vector2 Direction { get { return direction; } }
+    public Vector2 Velocity { get { return rb.velocity; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Just convert the transform position to a vector 2
         currentPosition = new Vector2(transform.position.x, transform.position.y);
-
-        // Get the direction of movement from the input system.
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        // Make sure the input is not too large, by normalizing.
-        if (direction.magnitude > 1)
-            direction = direction.normalized;
     }
 
     private void FixedUpdate()
@@ -39,5 +35,18 @@ public class PlayerMovement : MonoBehaviour
 
         // To move we take our currfent position position and we add the movement.
         rb.MovePosition(currentPosition + move);
+    }
+
+    /// <summary>
+    /// Have a public method to recieve the direction from the input manager.
+    /// </summary>
+    /// <param name="direction">The direction recieved from the input manager.</param>
+    public void SetDirection(Vector2 direction)
+    {
+        // Normalize the recieved direction if its magnitude is too high.
+        if (direction.magnitude > 1)
+            direction = direction.normalized;
+
+        this.direction = direction;
     }
 }
