@@ -21,6 +21,8 @@ public class PlayerTargetingEnemy : BaseEnemy
     void Update()
     {
         currentPosition = new Vector2(transform.position.x, transform.position.y);
+
+        Death();
     }
 
     public override void MoveEnemy()
