@@ -23,11 +23,17 @@ public class RepairBullet : Bullet
     {
         if (collision.transform.GetComponent<Wall>()) 
         {
-            Debug.Log("Detech Hit for wall");
             Wall w = collision.transform.GetComponent<Wall>();
 
             w.health += 10.0f;
-            Debug.Log("Increased the health");
+        }
+        else if(collision.transform.GetComponent<EnemyBullet>())
+        {
+            Destroy(gameObject);
+        }
+        else if(collision.transform.GetComponent<DestoryBullet>())
+        {
+            Destroy(gameObject);
         }
     }
 }
