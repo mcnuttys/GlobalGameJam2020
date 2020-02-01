@@ -36,5 +36,13 @@ public class EnemyBullet : Bullet
 
             Destroy(gameObject);
         }
+        else if(collision.transform.GetComponent<DestoryBullet>())
+        {
+            Destroy(gameObject);
+        }
+        else if(collision.transform.GetComponent<RepairBullet>())
+        {
+            Destroy(gameObject);
+        }
     }
 }

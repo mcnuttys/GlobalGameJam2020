@@ -24,22 +24,35 @@ public class DestoryBullet : Bullet
         {
             BaseEnemy b = collision.transform.GetComponent<BaseEnemy>();
             b.health -= (10.0f - damage);
+            Destroy(gameObject);
         }
         else if (collision.transform.GetComponent<PlayerTargetingEnemy>())
         {
             PlayerTargetingEnemy tg = collision.transform.GetComponent<PlayerTargetingEnemy>();
             tg.health -= (10.0f - damage);
+            Destroy(gameObject);
         }
         else if (collision.transform.GetComponent<ShootingEnemy>())
         {
 
             ShootingEnemy se = collision.transform.GetComponent<ShootingEnemy>();
             se.health -= (10.0f - damage);
+            Destroy(gameObject);
         }
         else if(collision.transform.GetComponent<BossEnemy>())
         {
             BossEnemy be = collision.transform.GetComponent<BossEnemy>();
             be.health -= (10.0f - damage);
+            Destroy(gameObject);
+        }
+        else if(collision.transform.GetComponent<EnemyBullet>())
+        {
+            EnemyBullet eb = collision.transform.GetComponent<EnemyBullet>();
+            Destroy(gameObject);
+        }
+        else if(collision.transform.GetComponent<RepairBullet>())
+        {
+            Destroy(gameObject);
         }
 
         base.OnCollisionEnter2D(collision);
