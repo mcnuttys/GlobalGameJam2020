@@ -388,7 +388,7 @@ MonoBehaviour:
   bulletOffset: 0
   firerate: 0.01
   bulletSpeed: 15
-  bulletPrefab: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea,
+  bulletPrefab: {fileID: 2827374593148314578, guid: 51256fac8bbd8b944b280dfe5bc745c7,
     type: 3}
 --- !u!114 &696475639
 MonoBehaviour:
@@ -898,6 +898,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1799301487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799301489}
+  - component: {fileID: 1799301488}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1799301488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799301487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c32685a9db60499aabb9b7cce3c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
+    type: 3}
+  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+    type: 3}
+  walls: []
+  countPerWave: 50
+  spawnAreaRadius: 30
+  spawnDelay: 10
+--- !u!4 &1799301489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799301487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1841605756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1237,7 @@ MonoBehaviour:
   bulletOffset: 0
   firerate: 0.01
   bulletSpeed: 15
-  bulletPrefab: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea,
+  bulletPrefab: {fileID: 8383716539395567581, guid: 5e5e94c6ee36b794fb04f3784919ebb1,
     type: 3}
 --- !u!50 &2102240604
 Rigidbody2D:
