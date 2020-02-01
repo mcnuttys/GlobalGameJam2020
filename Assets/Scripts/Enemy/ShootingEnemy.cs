@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingEnemy : PlayerTagertEnemy
+public class ShootingEnemy : PlayerTargetingEnemy
 {
 
     public float shootDistance = 5.5f;
