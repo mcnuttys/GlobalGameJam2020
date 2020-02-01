@@ -12,7 +12,6 @@ public class BaseEnemy : MonoBehaviour
     protected Rigidbody2D rb;
     public GameObject wall;
     protected Vector2 wallPosition;
-   
 
     // Start is called before the first frame update
     void Start()
