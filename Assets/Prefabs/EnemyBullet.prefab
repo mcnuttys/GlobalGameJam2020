@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a3cbe6b6cf5914595c56c27739fdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAge: 1
+  maxAge: 2
 --- !u!1 &8831688302096620599
 GameObject:
   m_ObjectHideFlags: 0
