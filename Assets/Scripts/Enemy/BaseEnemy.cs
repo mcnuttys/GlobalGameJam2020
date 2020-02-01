@@ -6,20 +6,21 @@ public class BaseEnemy : MonoBehaviour
 {
     //fields
     public float speed = 3.0f;
-
-    private Vector2 currentPosition;
-    private Rigidbody2D rb;
-    public GameObject wall;
-    private Vector2 wallPosition;
     public float health;
+
+    protected Vector2 currentPosition;
+    protected Rigidbody2D rb;
+    public GameObject wall;
+    protected Vector2 wallPosition;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
-        wallPosition = wallPosition.normalized;
 
+        currentPosition = new Vector2(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame
@@ -37,10 +38,10 @@ public class BaseEnemy : MonoBehaviour
     }
 
     //method to move the enemy
-    public void MoveEnemy()
+    public virtual void MoveEnemy()
     {
-        Vector2 move = wallPosition  * speed * Time.deltaTime;
-
+        Vector2 move = (wallPosition - currentPosition).normalized  * speed * Time.deltaTime;
+        
         rb.MovePosition(move + currentPosition);
     }
 
