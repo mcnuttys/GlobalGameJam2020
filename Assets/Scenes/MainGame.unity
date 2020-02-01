@@ -390,6 +390,9 @@ MonoBehaviour:
   bulletSpeed: 15
   bulletPrefab: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea,
     type: 3}
+  respawnTime: 20
+  sprite: {fileID: 0}
+  isDead: 0
 --- !u!114 &696475639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +965,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1841605758
@@ -1188,6 +1192,9 @@ MonoBehaviour:
   bulletSpeed: 15
   bulletPrefab: {fileID: 8383716539395567581, guid: 130f1210bd9b83043b509bad08574bea,
     type: 3}
+  respawnTime: 20
+  sprite: {fileID: 1757540941}
+  isDead: 0
 --- !u!50 &2102240604
 Rigidbody2D:
   serializedVersion: 4
