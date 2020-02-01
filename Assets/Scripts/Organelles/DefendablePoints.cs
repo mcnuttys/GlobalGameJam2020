@@ -8,7 +8,7 @@ using UnityEngine;
 public class DefendablePoints : MonoBehaviour, ITakeDamage
 {
     #region Fields
-    private int health = 0;
+    [SerializeField] private int health = 0;
 
     #endregion
 
@@ -18,7 +18,7 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     /// </summary>
     public void Death()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
 
@@ -29,7 +29,7 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     public void TakeDamage(int damageTaken)
     {
         health -= damageTaken;
-        if(health <= 0)
+        if (health <= 0)
         {
             Death();
         }
