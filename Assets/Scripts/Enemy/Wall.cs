@@ -22,7 +22,6 @@ public class Wall : MonoBehaviour
             health = maxHealth;
         }
 
-        Debug.Log(health); 
     }
 
 }

@@ -15,9 +15,8 @@ public class ShootingEnemy : PlayerTargetingEnemy
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
+        //wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
         
-
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
         shootTimer = 0.0f;

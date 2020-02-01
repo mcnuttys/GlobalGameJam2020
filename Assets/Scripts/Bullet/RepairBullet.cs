@@ -35,5 +35,9 @@ public class RepairBullet : Bullet
         {
             Destroy(gameObject);
         }
+        else if(collision.transform.GetComponent<Wall>())
+        {
+            Destroy(gameObject);
+        }
     }
 }

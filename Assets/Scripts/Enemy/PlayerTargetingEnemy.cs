@@ -33,13 +33,16 @@ public class PlayerTargetingEnemy : BaseEnemy
 
         Vector2 move = Vector2.zero;
 
-        if(Vector2.Distance(p.Position, currentPosition) < targetDistance)
+        if (p != null)
         {
-            move = (p.Position - currentPosition).normalized * speed * Time.deltaTime;
-        }
-        else
-        {
-           move = (wallPosition - currentPosition).normalized * speed * Time.deltaTime;
+            if (Vector2.Distance(p.Position, currentPosition) < targetDistance)
+            {
+                move = (p.Position - currentPosition).normalized * speed * Time.deltaTime;
+            }
+            else
+            {
+                move = (wallPosition - currentPosition).normalized * speed * Time.deltaTime;
+            }
         }
 
         transform.up = Vector2.Lerp(transform.up, move.normalized, 5 * Time.deltaTime);

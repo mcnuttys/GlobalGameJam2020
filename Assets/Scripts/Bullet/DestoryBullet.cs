@@ -23,38 +23,41 @@ public class DestoryBullet : Bullet
         if (collision.transform.GetComponent<BaseEnemy>())
         {
             BaseEnemy b = collision.transform.GetComponent<BaseEnemy>();
-            b.health -= (10.0f - damage);
+            b.health -= damage;
             Destroy(gameObject);
         }
-        else if (collision.transform.GetComponent<PlayerTargetingEnemy>())
+        if (collision.transform.GetComponent<PlayerTargetingEnemy>())
         {
             PlayerTargetingEnemy tg = collision.transform.GetComponent<PlayerTargetingEnemy>();
-            tg.health -= (10.0f - damage);
+            tg.health -= damage;
             Destroy(gameObject);
         }
-        else if (collision.transform.GetComponent<ShootingEnemy>())
+        if (collision.transform.GetComponent<ShootingEnemy>())
         {
 
             ShootingEnemy se = collision.transform.GetComponent<ShootingEnemy>();
-            se.health -= (10.0f - damage);
+            se.health -= damage;
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<BossEnemy>())
+        if(collision.transform.GetComponent<BossEnemy>())
         {
             BossEnemy be = collision.transform.GetComponent<BossEnemy>();
-            be.health -= (10.0f - damage);
+            be.health -= damage;
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<EnemyBullet>())
+        if(collision.transform.GetComponent<EnemyBullet>())
         {
             EnemyBullet eb = collision.transform.GetComponent<EnemyBullet>();
+            Destroy(gameObject);
+        }
+        if(collision.transform.GetComponent<Wall>())
+        {
             Destroy(gameObject);
         }
         else if(collision.transform.GetComponent<RepairBullet>())
         {
             Destroy(gameObject);
         }
-
-        base.OnCollisionEnter2D(collision);
+        
     }
 }
