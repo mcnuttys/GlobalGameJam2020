@@ -31,7 +31,7 @@ public class CameraManager : MonoBehaviour
         spCam2.transform.position += new Vector3(0, 0, zOffset);
 
         // Create the bounds around the players.
-        b = new Bounds();
+        b = new Bounds(p1.Position, Vector3.zero);
         b.Encapsulate(p1.Position);
         b.Encapsulate(p2.Position);
 

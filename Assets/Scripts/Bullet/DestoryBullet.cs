@@ -10,7 +10,6 @@ public class DestoryBullet : Bullet
     void Start()
     {
 
-        Destroy(gameObject,1f);
     }
 
     // Update is called once per frame

@@ -39,5 +39,7 @@ public class RepairBullet : Bullet
         {
             Destroy(gameObject);
         }
+
+        base.OnCollisionEnter2D(collision);
     }
 }

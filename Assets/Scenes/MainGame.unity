@@ -205,7 +205,7 @@ MonoBehaviour:
   walls: []
   countPerWave: 1
   spawnAreaRadius: 32
-  spawnDelay: 20
+  spawnDelay: 40
 --- !u!4 &167495462
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   spCam2: {fileID: 1279179600}
   centerCam: {fileID: 214308104}
   zOffset: -10
-  splitDistance: 15
+  splitDistance: 0
   split: 0
 --- !u!4 &608919070
 Transform:
@@ -438,9 +438,9 @@ MonoBehaviour:
   playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
     type: 3}
   walls: []
-  countPerWave: 25
+  countPerWave: 3
   spawnAreaRadius: 32
-  spawnDelay: 10
+  spawnDelay: 15
 --- !u!4 &695344710
 Transform:
   m_ObjectHideFlags: 0
@@ -488,12 +488,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   bulletOffset: 0
-  firerate: 0.01
+  firerate: 0.125
   bulletSpeed: 15
   bulletPrefab: {fileID: 2827374593148314578, guid: 51256fac8bbd8b944b280dfe5bc745c7,
     type: 3}
   respawnTime: 20
-  sprite: {fileID: 0}
+  sprite: {fileID: 2039251321}
   isDead: 0
 --- !u!114 &696475639
 MonoBehaviour:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e5945c13a74de4cb9a721e00bf45a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 7.5
 --- !u!50 &696475640
 Rigidbody2D:
   serializedVersion: 4
@@ -724,14 +724,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4c32685a9db60499aabb9b7cce3c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
+  baseEnemyPrefab: {fileID: 805243829819941261, guid: 74207c423631bdf45a9a0d0331bfcda8,
     type: 3}
-  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+  playerTargetingEnemyPrefab: {fileID: 805243829819941261, guid: 74207c423631bdf45a9a0d0331bfcda8,
     type: 3}
   walls: []
-  countPerWave: 25
+  countPerWave: 2
   spawnAreaRadius: 32
-  spawnDelay: 10
+  spawnDelay: 20
 --- !u!4 &846716925
 Transform:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   playerTargetingEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
     type: 3}
   walls: []
-  countPerWave: 50
+  countPerWave: 5
   spawnAreaRadius: 32
   spawnDelay: 10
 --- !u!4 &1799301489
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e5945c13a74de4cb9a721e00bf45a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 8
+  movementSpeed: 5
 --- !u!114 &2102240603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   bulletOffset: 0.1
-  firerate: 0.01
+  firerate: 0.125
   bulletSpeed: 15
   bulletPrefab: {fileID: 2403600650773644916, guid: 5e5e94c6ee36b794fb04f3784919ebb1,
     type: 3}
