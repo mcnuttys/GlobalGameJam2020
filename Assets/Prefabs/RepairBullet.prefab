@@ -163,5 +163,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8261eec6bd6ac4193bd406af09edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAge: 5
+  maxAge: 2.5
   damage: 0
