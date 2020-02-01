@@ -8,6 +8,10 @@ public class InputManager : MonoBehaviour
     public Player p1;
     public Player p2;
 
+    // The specific players cameras.
+    public Camera p1Cam;
+    public Camera p2Cam;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +25,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Determine the direction of the shot based off the mouse.
-            Vector2 mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mPos = p1Cam.ScreenToWorldPoint(Input.mousePosition);
             Vector2 dir = mPos - p1.Position;
             
             // Call p1's fire code.
@@ -29,7 +33,7 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            Vector2 mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mPos = p2Cam.ScreenToWorldPoint(Input.mousePosition);
             Vector2 dir = mPos - p1.Position;
 
             // Call p2's fire code.
