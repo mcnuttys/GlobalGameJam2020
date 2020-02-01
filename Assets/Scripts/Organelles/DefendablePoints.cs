@@ -8,11 +8,17 @@ using UnityEngine;
 public class DefendablePoints : MonoBehaviour, ITakeDamage
 {
     #region Fields
-    [SerializeField] private int health = 0;
+    [SerializeField]private int maxHealth = 1;
+    private int health = 0;
 
     #endregion
 
     #region Methods
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
     /// <summary>
     /// Called when the objects health is reduced to 0
     /// </summary>
@@ -32,6 +38,18 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
         if (health <= 0)
         {
             Death();
+        }
+    }
+
+    /// <summary>
+    /// Restores health of the defense point, unless it's already at max health
+    /// </summary>
+    /// <param name="healthRestored">The amount of health to restore</param>
+    public void Repair(int healthRestored)
+    {
+        if (health < maxHealth)
+        {
+            health += healthRestored; 
         }
     }
     #endregion
