@@ -169,6 +169,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &167495460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167495462}
+  - component: {fileID: 167495461}
+  m_Layer: 0
+  m_Name: SpawnerBossy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &167495461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167495460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c32685a9db60499aabb9b7cce3c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
+    type: 3}
+  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+    type: 3}
+  walls: []
+  countPerWave: 1
+  spawnAreaRadius: 32
+  spawnDelay: 20
+--- !u!4 &167495462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167495460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214308103
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +403,57 @@ Transform:
   - {fileID: 1279179601}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &695344708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695344710}
+  - component: {fileID: 695344709}
+  m_Layer: 0
+  m_Name: SpawnerTargety
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &695344709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695344708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c32685a9db60499aabb9b7cce3c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+    type: 3}
+  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+    type: 3}
+  walls: []
+  countPerWave: 25
+  spawnAreaRadius: 32
+  spawnDelay: 10
+--- !u!4 &695344710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695344708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696475637
 GameObject:
@@ -593,6 +695,57 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &846716923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846716925}
+  - component: {fileID: 846716924}
+  m_Layer: 0
+  m_Name: SpawnerShooty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &846716924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846716923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c32685a9db60499aabb9b7cce3c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
+    type: 3}
+  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+    type: 3}
+  walls: []
+  countPerWave: 25
+  spawnAreaRadius: 32
+  spawnDelay: 10
+--- !u!4 &846716925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846716923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892108954
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +1065,7 @@ GameObject:
   - component: {fileID: 1799301489}
   - component: {fileID: 1799301488}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,11 +1085,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
     type: 3}
-  playerTargetingEnemyPrefab: {fileID: 3043740035869362626, guid: 8fe7579766180ce4c8c444ca258d0be7,
+  playerTargetingEnemyPrefab: {fileID: 1409746094842071506, guid: 6927456f539429546a2022bf63a36388,
     type: 3}
   walls: []
   countPerWave: 50
-  spawnAreaRadius: 30
+  spawnAreaRadius: 32
   spawnDelay: 10
 --- !u!4 &1799301489
 Transform:
