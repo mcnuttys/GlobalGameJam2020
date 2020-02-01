@@ -16,6 +16,7 @@ public class CameraManager : MonoBehaviour
     [Header("Split Settings")]
     public float zOffset = -10f;
     public float splitDistance = 20f;
+    public bool split;
 
     private Bounds b;
 
@@ -44,12 +45,16 @@ public class CameraManager : MonoBehaviour
             spCam1.enabled = false;
             spCam2.enabled = false;
             centerCam.enabled = true;
+
+            split = false;
         } else
         {
             // Center cam is disabled, and split cams are enabled.
             spCam1.enabled = true;
             spCam2.enabled = true;
             centerCam.enabled = false;
+
+            split = true;
         }
     }
 }

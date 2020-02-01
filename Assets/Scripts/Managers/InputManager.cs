@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     public Player p2;
 
     // The specific players cameras.
+    public CameraManager cameraManager;
+    public Camera center;
     public Camera p1Cam;
     public Camera p2Cam;
 
@@ -25,7 +27,10 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Determine the direction of the shot based off the mouse.
-            Vector2 mPos = p1Cam.ScreenToWorldPoint(Input.mousePosition);
+            Camera c = (cameraManager.split) ? p1Cam : center;
+
+            Vector2 mPos = c.ScreenToWorldPoint(Input.mousePosition);
+            
             Vector2 dir = mPos - p1.Position;
             
             // Call p1's fire code.
@@ -33,11 +38,18 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            Vector2 mPos = p2Cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dir = mPos - p2.Position;
+            Camera c = (cameraManager.split) ? p2Cam : center;
 
+            Vector2 mPos = c.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 dir = mPos - p2.Position;
+            
             // Call p2's fire code.
             p2.Fire(dir);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(p1Cam.ScreenToWorldPoint(Input.mousePosition), 0.25f);
     }
 }
