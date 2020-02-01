@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 1474443361}
   p2: {fileID: 872080603}
+  cameraManager: {fileID: 0}
+  center: {fileID: 0}
   p1Cam: {fileID: 938608415}
   p2Cam: {fileID: 1474494739}
 --- !u!4 &6434446
@@ -203,6 +205,7 @@ MonoBehaviour:
   centerCam: {fileID: 1964932551}
   zOffset: -10
   splitDistance: 15
+  split: 0
 --- !u!4 &69030689
 Transform:
   m_ObjectHideFlags: 0
@@ -731,9 +734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a036eeaed3dbffa409a4de116a7ec1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  health: 10
-  wall: {fileID: 2024411765}
+  speed: 3
+  health: 0
+  wall: {fileID: 0}
 --- !u!50 &1214878396
 Rigidbody2D:
   serializedVersion: 4
