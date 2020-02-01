@@ -66,7 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116c9f89880b2f146b9e26d2bcfda0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAge: 5
+  maxAge: 2.5
+  damage: 0
 --- !u!1 &8383716540394098563
 GameObject:
   m_ObjectHideFlags: 0
