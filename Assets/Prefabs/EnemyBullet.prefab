@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAge: 2
-  soundFX: {fileID: 0}
+  soundFX: {fileID: 8008145252218974081}
 --- !u!82 &8008145252218974081
 AudioSource:
   m_ObjectHideFlags: 0
