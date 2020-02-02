@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   moveSpeed: 0
-  fireRate: 0.02
+  fireRate: 0.1
   bulletSpeed: 0
-  buffTime: 0
+  buffTime: 10

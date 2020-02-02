@@ -16,4 +16,4 @@ MonoBehaviour:
   moveSpeed: 0
   fireRate: 0
   bulletSpeed: 0
-  buffTime: 0
+  buffTime: 10
