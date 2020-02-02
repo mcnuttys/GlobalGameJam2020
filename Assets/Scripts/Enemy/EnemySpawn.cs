@@ -32,6 +32,8 @@ public class EnemySpawn : MonoBehaviour
         {
             walls.Add(obj.gameObject);
         }
+
+        spawnTimer = spawnDelay;
     }
 
     void Update()

@@ -35,6 +35,9 @@ public class BossEnemy : PlayerTargetingEnemy
 
         if (fireTimer > 0)
             fireTimer -= Time.deltaTime;
+
+        if (health <= 0)
+            Destroy(gameObject);
     }
 
     IEnumerator Fire()

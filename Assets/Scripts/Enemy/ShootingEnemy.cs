@@ -31,7 +31,7 @@ public class ShootingEnemy : PlayerTargetingEnemy
         if (shootTimer < 0.0f)
         {
             Shoot();
-            shootTimer = 0.3f;
+            shootTimer = shootMax;
         }
 
         //start the timer
