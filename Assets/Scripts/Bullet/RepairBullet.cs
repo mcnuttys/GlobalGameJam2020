@@ -5,6 +5,7 @@ using UnityEngine;
 public class RepairBullet : Bullet
 {
     public float damage;
+    public float pushFactor;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,12 @@ public class RepairBullet : Bullet
         }
         else if(collision.transform.GetComponent<Wall>())
         {
+            Destroy(gameObject);
+        }
+        if (collision.transform.GetComponent<BaseEnemy>())
+        {
+            BaseEnemy b = collision.transform.GetComponent<BaseEnemy>();
+            b.GetComponent<Rigidbody2D>().AddForce((b.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
             Destroy(gameObject);
         }
 
