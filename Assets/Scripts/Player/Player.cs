@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private PlayerMovement pm;
     private float fireTimer;
     public GameObject reviveObject;
+    public AudioSource playerDeath;
 
     public Transform bar;
 
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
     {
         if(health <= 0)
         {
+            playerDeath.Play();
             //Prevent the player from moving
             pm.enabled = false;
             isDead = true;
