@@ -12,6 +12,7 @@ public class BaseEnemy : MonoBehaviour
     protected Rigidbody2D rb;
     public GameObject wall;
     protected Vector2 wallPosition;
+    protected float pushFactor;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class BaseEnemy : MonoBehaviour
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
         rb.angularVelocity = Random.Range(100, 500);
+
+        pushFactor = 10;
     }
 
     // Update is called once per frame
@@ -55,6 +58,13 @@ public class BaseEnemy : MonoBehaviour
             w.health -= 10.0f;
 
             Destroy(gameObject);
+        }
+
+        if (collision.transform.GetComponent<Player>())
+        {
+            pushFactor = 10;
+            Player p = collision.transform.GetComponent<Player>();
+            p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
         }
 
     }
