@@ -114,7 +114,7 @@ public class BaseEnemy : MonoBehaviour
         if(health <= 0.0f)
         {
             enemyDeath.Play();
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
 

@@ -49,7 +49,8 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     /// </summary>
     public void Death()
     {
-        Destroy(gameObject);
+        damageOrganelle.Play();
+        Destroy(gameObject, .1f);
     }
 
 
