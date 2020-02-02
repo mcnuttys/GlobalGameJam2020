@@ -16,13 +16,13 @@ public class BaseEnemy : MonoBehaviour
 
     private float hitTimer;
 
-    public AudioSource enemyDeath;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
+
+        if (wall != null)
+            wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
 
         currentPosition = new Vector2(transform.position.x, transform.position.y);
 
@@ -113,7 +113,6 @@ public class BaseEnemy : MonoBehaviour
     {
         if(health <= 0.0f)
         {
-            enemyDeath.Play();
             Destroy(gameObject, 0.1f);
         }
     }
