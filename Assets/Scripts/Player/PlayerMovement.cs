@@ -51,4 +51,13 @@ public class PlayerMovement : MonoBehaviour
 
         this.direction = direction;
     }
+
+    public void FreezeRB ()
+    {
+        rb.isKinematic = true;
+    }
+    public void UnfreezeRB ()
+    {
+        rb.isKinematic = false;
+    }
 }

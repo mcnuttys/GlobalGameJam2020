@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript2 : MonoBehaviour
+public class PointAtPlayer : MonoBehaviour
 {
+    public Player p1;
+    public Player p2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,7 @@ public class NewBehaviourScript2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector2 dir = p2.Position - p1.Position;
+        transform.up = dir.normalized;
     }
 }

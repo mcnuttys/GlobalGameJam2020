@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
 
             Revive revCircle = Instantiate(reviveObject, transform.position, Quaternion.identity).GetComponent<Revive>();
             revCircle.SetParameters(this);
+
+            pm.FreezeRB();
         }
     }
 
@@ -128,6 +130,8 @@ public class Player : MonoBehaviour
         timeBeforeRespawnElapsed = 0;
         health = 100f;
         sprite.material.color = Color.white;
+
+        pm.UnfreezeRB();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

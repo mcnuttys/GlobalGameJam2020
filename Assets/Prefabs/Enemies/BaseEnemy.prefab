@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1409746094344815168}
   - component: {fileID: 1409746094344815175}
   - component: {fileID: 1409746094344815173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 1409746094842071505}
   - component: {fileID: 1409746094842071511}
   - component: {fileID: 1409746094842071504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BaseEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,6 +250,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Googly Eye (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7583777118486477307, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583777118776744866, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7583777118776744892, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
       propertyPath: m_SortingOrder
@@ -259,6 +269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583777118793358411, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8442a09732168f84f8caf11462f48ed2, type: 3}
@@ -350,6 +365,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Googly Eye
       objectReference: {fileID: 0}
+    - target: {fileID: 7583777118486477307, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583777118776744866, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7583777118776744892, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
       propertyPath: m_SortingOrder
@@ -359,6 +384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583777118793358411, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8442a09732168f84f8caf11462f48ed2, type: 3}
