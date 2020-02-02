@@ -16,10 +16,6 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
 
     public SpriteRenderer displaySprite;
 
-    public Sprite[] healthStates;
-
-    public SpriteRenderer displaySprite;
-
     #endregion
 
     #region Methods

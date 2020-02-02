@@ -47,9 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 250
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
   damageOrganelle: {fileID: 503229846013602873}
 --- !u!82 &503229846013602873
 AudioSource:
@@ -147,18 +144,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
->>>>>>> 9d98f3d6bf21ba3311eb332a3318cd1804e97c85
   healthStates:
   - {fileID: 21300000, guid: 84143f7250ff7db4e9821f18820b5855, type: 3}
   - {fileID: 21300000, guid: a657e890269bdd7408a3307e2dd6287d, type: 3}
   - {fileID: 21300000, guid: ee74eecfe2eb2b242bd0a6b5549b19a3, type: 3}
   - {fileID: 21300000, guid: d24e0ae74b7a1d64287375f756a541c2, type: 3}
   displaySprite: {fileID: 4708054892153662729}
-<<<<<<< HEAD
-=======
->>>>>>> ed70ed39182e6a1218a2cdd9150d33649781785d
->>>>>>> 9d98f3d6bf21ba3311eb332a3318cd1804e97c85
 --- !u!1 &4708054892153662735
 GameObject:
   m_ObjectHideFlags: 0
