@@ -352,6 +352,7 @@ GameObject:
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
+  m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +368,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d6bf845945023984a86818542c671181, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

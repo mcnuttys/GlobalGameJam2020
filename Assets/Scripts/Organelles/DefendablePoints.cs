@@ -52,5 +52,10 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
             health += healthRestored; 
         }
     }
+
+    public float GetHealth()
+    {
+        return health;
+    }
     #endregion
 }
