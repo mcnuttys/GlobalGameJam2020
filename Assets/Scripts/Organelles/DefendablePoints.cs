@@ -11,12 +11,27 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     [SerializeField]private int maxHealth = 1;
     private int health = 0;
 
+    public Sprite[] healthStates;
+
+    public SpriteRenderer displaySprite;
+
     #endregion
 
     #region Methods
     private void Start()
     {
         health = maxHealth;
+    }
+
+    public void Update()
+    {
+        for (int i = 0; i < healthStates.Length; i++)
+        {
+            float iPercent = (i / healthStates.Length) * maxHealth;
+
+            if (health > iPercent)
+                displaySprite.sprite = healthStates[i];
+        }
     }
 
     /// <summary>
