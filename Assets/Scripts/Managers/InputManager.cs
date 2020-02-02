@@ -14,6 +14,17 @@ public class InputManager : MonoBehaviour
     public Camera p1Cam;
     public Camera p2Cam;
 
+    private static InputManager instance;
+    public static InputManager Instance { get { return instance; } }
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

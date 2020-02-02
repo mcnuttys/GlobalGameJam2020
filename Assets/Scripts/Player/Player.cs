@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     private PlayerMovement pm;
     private float fireTimer;
+    public GameObject reviveObject;
 
     public Vector2 Position { get { return transform.position; } }
 
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour
                 RemoveBuff();
             }
         }
-
+  
         //Check if the player has died
         if (isDead)
         {
@@ -61,12 +62,7 @@ public class Player : MonoBehaviour
             {
                 //"respawn" the player
                 transform.position = Vector2.zero;
-                pm.enabled = true;
-                //Reset player paramters
-                isDead = false;
-                timeBeforeRespawnElapsed = 0;
-                health = 100f;
-                sprite.color = Color.white;
+                RevivePlayer();
             }
         }
         else
@@ -82,7 +78,11 @@ public class Player : MonoBehaviour
             //Prevent the player from moving
             pm.enabled = false;
             isDead = true;
-            sprite.color = new Color(51,51,51);
+            //sprite.material.color = new Color(51,51,51);
+            Debug.Log("Spawned");
+
+            Revive revCircle = Instantiate(reviveObject, transform.position, Quaternion.identity).GetComponent<Revive>();
+            revCircle.SetParameters(this);
         }
     }
 
@@ -120,7 +120,15 @@ public class Player : MonoBehaviour
         pm.SetDirection(direction);
     }
 
-
+    public void RevivePlayer()
+    {
+        pm.enabled = true;
+        //Reset player paramters
+        isDead = false;
+        timeBeforeRespawnElapsed = 0;
+        health = 100f;
+        sprite.material.color = Color.white;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Apply Buff
