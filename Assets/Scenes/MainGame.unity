@@ -1736,7 +1736,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &936554378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1863,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
-=======
 --- !u!114 &922396053 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4708054891767870864, guid: 5a42955f9b57b5743aaa287adc31e741,
@@ -1877,7 +1875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee62fd6a4b3a9784cb4d51a0def8869e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> d38a5eda22772b5853aea96b2aec5357d1658d4a
 --- !u!1001 &950535878
 PrefabInstance:
   m_ObjectHideFlags: 0
