@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3056089921790233189}
   - component: {fileID: 3056089921790233186}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3056089921894529303}
   - component: {fileID: 1179743523733449823}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3056089922209551096}
   - component: {fileID: 3056089922209551099}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Reticulum-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
