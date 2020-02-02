@@ -261,7 +261,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How to play the videoed game and stuff goes in this here box
+  m_Text: 'Blue Player: Offensive, kill the enemies.
+
+    Green Player (controller): Defensive, repair the organelles.'
 --- !u!222 &432878276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -730,7 +732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How to Play Game Title
+  m_Text: 'How to Play: Protein Protectors'
 --- !u!222 &2002659069
 CanvasRenderer:
   m_ObjectHideFlags: 0
