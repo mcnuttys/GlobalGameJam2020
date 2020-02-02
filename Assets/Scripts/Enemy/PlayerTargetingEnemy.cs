@@ -11,6 +11,7 @@ public class PlayerTargetingEnemy : BaseEnemy
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if(wall != null)
         wallPosition = new Vector2(wall.transform.position.x, wall.transform.position.y);
         players = GameObject.FindObjectsOfType<Player>();
 

@@ -50,9 +50,9 @@ MonoBehaviour:
   health: 0
   damageOrganelle: {fileID: 3433497795890557571}
   healthStates:
-  - {fileID: 21300000, guid: 90574b8b249016840a21d5fe762400eb, type: 3}
-  - {fileID: 21300000, guid: 1efb2463706c8fb40af99816d931406f, type: 3}
-  - {fileID: 21300000, guid: 0dc0b774051f17c47b1dcd8e5c59d001, type: 3}
+  - {fileID: 21300000, guid: 0ce17f7269d3f134fb53ed8b8f2a1b27, type: 3}
+  - {fileID: 21300000, guid: 22767f27cad23714ca3775561e039409, type: 3}
+  - {fileID: 21300000, guid: e1d694210722c5a4caec99a376e311e5, type: 3}
   - {fileID: 21300000, guid: 4dbbbfec731e515428c4228c9052f7bb, type: 3}
   displaySprite: {fileID: 5742195884507388769}
 --- !u!82 &3433497795890557571

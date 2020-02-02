@@ -258,9 +258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  health: 0
   damageOrganelle: {fileID: -3833083322391019523}
-  healthStates: []
-  displaySprite: {fileID: 0}
+  healthStates:
+  - {fileID: 21300000, guid: bbab37aa7e2c17e4696abf7ec46fa9a4, type: 3}
+  - {fileID: 21300000, guid: 911853697b19a1e43b1ee6e558844fe4, type: 3}
+  - {fileID: 21300000, guid: f56bf4320e002524fb0884acf735cae5, type: 3}
+  - {fileID: 21300000, guid: 5fb4478bc9bfee64ca6be215e623e3ef, type: 3}
+  displaySprite: {fileID: 1753146440625016065}
 --- !u!82 &-3833083322391019523
 AudioSource:
   m_ObjectHideFlags: 0

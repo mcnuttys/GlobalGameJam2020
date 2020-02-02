@@ -37,7 +37,7 @@ public class BuffSpawner : MonoBehaviour
             if (respawnTimeElapsed >= respawnTime)
             {
                 //Spawn new Buff
-                spawnedBuffInstance = Instantiate(buffToSpawn, transform.position, Quaternion.identity);
+                spawnedBuffInstance = Instantiate(buffToSpawn, this.transform.position, Quaternion.identity);
             }
         }
     }

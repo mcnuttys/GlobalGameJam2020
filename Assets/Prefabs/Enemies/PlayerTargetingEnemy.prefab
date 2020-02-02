@@ -70,7 +70,6 @@ MonoBehaviour:
   speed: 7.5
   health: 25
   wall: {fileID: 0}
-  enemyDeath: {fileID: 0}
   players: []
   targetDistance: 5
 --- !u!1 &3043740037275007702
@@ -261,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583777118793358405, guid: 8442a09732168f84f8caf11462f48ed2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7583777118793358411, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
