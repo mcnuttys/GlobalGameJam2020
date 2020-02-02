@@ -215,6 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damageOrganelle: {fileID: 7758458934974559549}
+  healthStates: []
+  displaySprite: {fileID: 0}
 --- !u!82 &7758458934974559549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -226,7 +228,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b57983858260094c8c54a36ecf10319, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

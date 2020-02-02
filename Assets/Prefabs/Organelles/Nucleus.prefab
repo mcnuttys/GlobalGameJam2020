@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 250
   damageOrganelle: {fileID: 503229846013602873}
+  healthStates: []
+  displaySprite: {fileID: 0}
 --- !u!82 &503229846013602873
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59,7 +61,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6cebdab6eeea74c46ad72d3dec342de8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -144,12 +146,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  healthStates:
-  - {fileID: 21300000, guid: 84143f7250ff7db4e9821f18820b5855, type: 3}
-  - {fileID: 21300000, guid: a657e890269bdd7408a3307e2dd6287d, type: 3}
-  - {fileID: 21300000, guid: ee74eecfe2eb2b242bd0a6b5549b19a3, type: 3}
-  - {fileID: 21300000, guid: d24e0ae74b7a1d64287375f756a541c2, type: 3}
-  displaySprite: {fileID: 4708054892153662729}
 --- !u!1 &4708054892153662735
 GameObject:
   m_ObjectHideFlags: 0

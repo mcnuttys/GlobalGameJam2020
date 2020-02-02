@@ -6,6 +6,11 @@ public class EnemyBullet : Bullet
 {
     float damaage;
 
+    private void Start()
+    {
+        soundFX.Play();
+    }
+
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.GetComponent<Player>())

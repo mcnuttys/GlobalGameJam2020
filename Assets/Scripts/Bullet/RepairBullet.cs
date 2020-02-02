@@ -10,7 +10,7 @@ public class RepairBullet : Bullet
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundFX.Play();
     }
 
     // Update is called once per frame
