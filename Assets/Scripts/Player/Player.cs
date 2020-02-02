@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
 
     public bool isDead;
+    private Revive reviveCircle;
 
     private PlayerMovement pm;
     private float fireTimer;
@@ -81,10 +82,11 @@ public class Player : MonoBehaviour
             //sprite.material.color = new Color(51,51,51);
             Debug.Log("Spawned");
 
-            Revive revCircle = Instantiate(reviveObject, transform.position, Quaternion.identity).GetComponent<Revive>();
-            revCircle.SetParameters(this);
-
             pm.FreezeRB();
+
+            Revive revCircle = Instantiate(reviveObject, transform.position + -Vector3.forward * 3f, Quaternion.identity).GetComponent<Revive>();
+            revCircle.SetParameters(this);
+            reviveCircle = revCircle;
         }
     }
 
@@ -130,6 +132,11 @@ public class Player : MonoBehaviour
         timeBeforeRespawnElapsed = 0;
         health = 100f;
         sprite.material.color = Color.white;
+
+        if(reviveCircle != null)
+        {
+            Destroy(reviveCircle.gameObject);
+        }
 
         pm.UnfreezeRB();
     }
