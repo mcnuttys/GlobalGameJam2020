@@ -255,13 +255,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Blue Player: Offensive, kill the enemies.
+  m_Text: 'Blue Player: Offensive, fight off the invaders.
+
 
     Green Player (controller): Defensive, repair the organelles.'
 --- !u!222 &432878276
@@ -732,7 +733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'How to Play: Protein Protectors'
+  m_Text: How to Play
 --- !u!222 &2002659069
 CanvasRenderer:
   m_ObjectHideFlags: 0
