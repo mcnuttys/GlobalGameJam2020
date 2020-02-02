@@ -4,7 +4,6 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Buff Stat list",menuName = "Scriptable Objects/Buff")]
-
 public class Buff : ScriptableObject
 {
     [Header("Buff Amounts")]

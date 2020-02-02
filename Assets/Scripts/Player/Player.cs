@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public AudioSource playerDeath;
 
     public Transform bar;
+    public AudioSource revivePlayer;
 
     public Vector2 Position { get { return transform.position; } }
 
@@ -141,6 +142,7 @@ public class Player : MonoBehaviour
 
     public void RevivePlayer()
     {
+        revivePlayer.Play();
         pm.enabled = true;
         //Reset player paramters
         isDead = false;
