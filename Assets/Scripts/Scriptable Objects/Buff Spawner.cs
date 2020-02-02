@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class BuffSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Fields
+    [SerializeField] float respawnTime;
+    [SerializeField] Buff buffToSpawn;
+    [SerializeField] float respawnTimeElapsed;
+    [SerializeField] Buff spawnedBuffInstance;
+    bool buffSpawned = false;
+
+
+
+    //Methods
+    private void Update()
     {
-        
+        if(spawnedBuffInstance == null)
+        {
+            buffSpawned = false;
+        }
+        else
+        {
+            buffSpawned = true;
+            respawnTimeElapsed = 0;
+        }
+
+        //Spawn Stuff
+        if(buffSpawned == false)
+        {
+            respawnTimeElapsed += Time.deltaTime;
+
+            if (respawnTimeElapsed >= respawnTime)
+            {
+                //Spawn new Buff
+                spawnedBuffInstance = Instantiate(buffToSpawn, transform.position, Quaternion.identity);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
