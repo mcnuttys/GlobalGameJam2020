@@ -9,7 +9,7 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
 {
     #region Fields
     [SerializeField]private int maxHealth = 1;
-    private int health = 0;
+    public int health = 0;
     public AudioSource damageOrganelle;
 
     public Sprite[] healthStates;
@@ -22,13 +22,22 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     private void Start()
     {
         health = maxHealth;
+
+        for (int i = 0; i < healthStates.Length; i++)
+        {
+            float iPercent = ((float)i / (float)healthStates.Length) * (float)maxHealth;
+
+            if (health > iPercent)
+                displaySprite.sprite = healthStates[i];
+        }
     }
 
     public void Update()
     {
+
         for (int i = 0; i < healthStates.Length; i++)
         {
-            float iPercent = (i / healthStates.Length) * maxHealth;
+            float iPercent = ((float)i / (float)healthStates.Length) * (float)maxHealth;
 
             if (health > iPercent)
                 displaySprite.sprite = healthStates[i];
