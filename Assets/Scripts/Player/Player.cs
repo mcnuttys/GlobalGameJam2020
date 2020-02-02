@@ -73,6 +73,10 @@ public class Player : MonoBehaviour
         {
             Death();
         }
+        if(health < 0)
+        {
+            health = 0;
+        }
 
         SetSize(health/100);
         //Debug.Log(health);
