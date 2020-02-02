@@ -952,6 +952,7 @@ MonoBehaviour:
   isDead: 0
   reviveObject: {fileID: 5440759936228850496, guid: 875da5a77c3908f459edcd5ff77b81ad,
     type: 3}
+  bar: {fileID: 0}
 --- !u!114 &696475639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1834,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 12087
+    m_Bits: 14135
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2766,6 +2767,7 @@ MonoBehaviour:
   isDead: 0
   reviveObject: {fileID: 5440759936228850496, guid: 875da5a77c3908f459edcd5ff77b81ad,
     type: 3}
+  bar: {fileID: 0}
 --- !u!50 &2102240604
 Rigidbody2D:
   serializedVersion: 4
