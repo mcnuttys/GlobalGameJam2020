@@ -8,7 +8,7 @@ using UnityEngine;
 public class DefendablePoints : MonoBehaviour, ITakeDamage
 {
     #region Fields
-    [SerializeField]private int maxHealth = 1;
+    [SerializeField]public int maxHealth = 1;
     public int health = 0;
     public AudioSource damageOrganelle;
 
