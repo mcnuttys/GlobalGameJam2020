@@ -16,6 +16,8 @@ public class BaseEnemy : MonoBehaviour
 
     private float hitTimer;
 
+    public AudioSource enemyDeath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -111,6 +113,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if(health <= 0.0f)
         {
+            enemyDeath.Play();
             Destroy(gameObject);
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Revive : MonoBehaviour
 {
+    public AudioSource revivePlayer;
     public float fullyReviveCircleScale;
     public float radius;
     public float timeToRevive;
@@ -53,6 +54,7 @@ public class Revive : MonoBehaviour
             //If the player is in the trigger long enough
             if (reviveTimeElapsed >= timeToRevive)
             {
+                revivePlayer.Play();
                 playerToRevive.RevivePlayer();
 
                 Destroy(this.gameObject);

@@ -10,6 +10,7 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
     #region Fields
     [SerializeField]private int maxHealth = 1;
     private int health = 0;
+    public AudioSource damageOrganelle;
 
     #endregion
 
@@ -37,6 +38,7 @@ public class DefendablePoints : MonoBehaviour, ITakeDamage
         health -= damageTaken;
         if (health <= 0)
         {
+            damageOrganelle.Play();
             Death();
         }
     }

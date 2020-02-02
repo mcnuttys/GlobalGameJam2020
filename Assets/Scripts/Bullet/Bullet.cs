@@ -7,11 +7,12 @@ public class Bullet : MonoBehaviour
     public float maxAge = 5;
     
     private float age;
+    public AudioSource soundFX;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundFX.Play();
     }
 
     // Update is called once per frame
