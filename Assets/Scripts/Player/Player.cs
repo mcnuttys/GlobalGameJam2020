@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     private float fireTimer;
     public GameObject reviveObject;
 
+    public Transform bar;
+
     public Vector2 Position { get { return transform.position; } }
 
     private Vector2 lastDirection = new Vector2(1, 0);
@@ -36,7 +38,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         pm = GetComponent<PlayerMovement>();
-
     }
 
     // Update is called once per frame
@@ -70,6 +71,14 @@ public class Player : MonoBehaviour
         {
             Death();
         }
+
+        SetSize(health/100);
+        Debug.Log(health);
+    }
+
+    public void SetSize(float health)
+    {
+        bar.localScale = new Vector3(health, 1f);
     }
 
     public void Death()
