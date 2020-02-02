@@ -45,7 +45,7 @@ public class PlayerTargetingEnemy : BaseEnemy
             }
         }
 
-        transform.up = Vector2.Lerp(transform.up, move.normalized, 5 * Time.deltaTime);
+        transform.up = Vector2.Lerp(transform.up, move.normalized, 25 * Time.deltaTime);
 
         rb.MovePosition(move + currentPosition);
     }

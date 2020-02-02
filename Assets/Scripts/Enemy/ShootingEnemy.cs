@@ -10,6 +10,7 @@ public class ShootingEnemy : PlayerTargetingEnemy
     public float bulletSpeed = 5.0f;
     public float fireRate = 0.5f;
     public GameObject bullet;
+    public float offset = 1.7f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public class ShootingEnemy : PlayerTargetingEnemy
             Vector2 direction = (player.Position - currentPosition).normalized;
 
             //create the bullet
-            GameObject b = Instantiate(bullet, currentPosition + direction * 0.7f, Quaternion.identity);
+            GameObject b = Instantiate(bullet, currentPosition + direction * offset, Quaternion.identity);
 
             //get the rigidbody for the bullet
             Rigidbody2D bRB = b.GetComponent<Rigidbody2D>();

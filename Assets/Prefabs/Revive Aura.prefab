@@ -4896,7 +4896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullyReviveCircleScale: 0.29
-  radius: 1
+  radius: 4
   timeToRevive: 10
   reviveTimeElapsed: 0
   playerToRevive: {fileID: 0}

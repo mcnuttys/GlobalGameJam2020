@@ -8,7 +8,7 @@ public class EnemyBullet : Bullet
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.GetComponent<Player>())
+        if (collision.transform.GetComponent<Player>())
         {
             Player p = collision.transform.GetComponent<Player>();
 
@@ -16,7 +16,7 @@ public class EnemyBullet : Bullet
 
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<Wall>())
+        else if (collision.transform.GetComponent<Wall>())
         {
             Wall w = collision.transform.GetComponent<Wall>();
 
@@ -24,13 +24,15 @@ public class EnemyBullet : Bullet
 
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<DestoryBullet>())
+        else if (collision.transform.GetComponent<DestoryBullet>())
         {
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<RepairBullet>())
+        else if (collision.transform.GetComponent<RepairBullet>())
         {
             Destroy(gameObject);
         }
+
+        base.OnCollisionEnter2D(collision);
     }
 }

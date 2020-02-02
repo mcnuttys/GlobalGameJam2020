@@ -46,7 +46,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -67,11 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9154006ff56c6974292806d8c8fa757e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 7.5
   health: 50
   wall: {fileID: 0}
-  eyes:
-  - {fileID: 3564196288087430585}
   players: []
   targetDistance: 5
 --- !u!1 &3043740037275007702
@@ -181,17 +179,17 @@ PrefabInstance:
     - target: {fileID: 7583777118486477300, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2702365
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 7583777118486477300, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59609604
+      value: 0.546
       objectReference: {fileID: 0}
     - target: {fileID: 7583777118486477300, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.17
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7583777118486477300, guid: 8442a09732168f84f8caf11462f48ed2,
         type: 3}
@@ -255,12 +253,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8442a09732168f84f8caf11462f48ed2, type: 3}
---- !u!1 &3564196288087430585 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7583777118486477307, guid: 8442a09732168f84f8caf11462f48ed2,
-    type: 3}
-  m_PrefabInstance: {fileID: 6361454011428154434}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3564196288087430582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7583777118486477300, guid: 8442a09732168f84f8caf11462f48ed2,
