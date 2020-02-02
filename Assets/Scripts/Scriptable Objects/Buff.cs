@@ -14,4 +14,21 @@ public class Buff : ScriptableObject
    public float bulletSpeed;
    public float buffTime;
 
+
+
+
+    public List<float> GetStats()
+    {
+
+        List<float> stats = new List<float>();
+        stats.Add(health);
+        stats.Add(moveSpeed);
+        stats.Add(fireRate);
+        stats.Add(bulletSpeed);
+        stats.Add(buffTime);
+
+        return stats;
+
+    }
 }
+

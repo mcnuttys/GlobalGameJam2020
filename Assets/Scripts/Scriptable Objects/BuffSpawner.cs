@@ -6,12 +6,15 @@ public class BuffSpawner : MonoBehaviour
 {
     //Fields
     [SerializeField] float respawnTime;
-    [SerializeField] Buff buffToSpawn;
+    [SerializeField] GameObject buffToSpawn;
     [SerializeField] float respawnTimeElapsed;
-    [SerializeField] Buff spawnedBuffInstance;
+    [SerializeField] GameObject spawnedBuffInstance;
     bool buffSpawned = false;
 
-
+    private void Start()
+    {
+        spawnedBuffInstance = Instantiate(buffToSpawn, transform.position, Quaternion.identity);
+    }
 
     //Methods
     private void Update()
