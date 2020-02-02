@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
 
 
-    private Buff currentBuff;
+    [SerializeField] private List<float> currentBuffStats;
     float buffTime = 0;
     float buffTimeElapsed = 0;
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
             fireTimer -= Time.deltaTime;
 
         //
-        if (currentBuff != null)
+        if (currentBuffStats.Count != 0)
         {
             buffTimeElapsed += Time.deltaTime;
             if (buffTimeElapsed >= buffTime)
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         }
 
         SetSize(health/100);
-        Debug.Log(health);
+        //Debug.Log(health);
     }
 
     public void SetSize(float health)
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
             pm.enabled = false;
             isDead = true;
             //sprite.material.color = new Color(51,51,51);
-            Debug.Log("Spawned");
+           // Debug.Log("Spawned");
 
             pm.FreezeRB();
 
@@ -156,7 +156,8 @@ public class Player : MonoBehaviour
         //Apply Buff
         if (collision.collider.CompareTag("BuffPickup"))
         {
-            ApplyBuff(collision.collider.gameObject.GetComponent<BuffPickup>().BuffToPickup);
+            Debug.Log("Applied Buff");
+            ApplyBuff(collision.collider.gameObject.GetComponent<BuffPickup>().BuffToPickup.GetStats());
             Destroy(collision.collider.gameObject);
         }
     }
@@ -165,22 +166,24 @@ public class Player : MonoBehaviour
     /// Applies the picked up buff
     /// </summary>
     /// <param name="buffToApply">The buff to apply to the player</param>
-    private void ApplyBuff(Buff buffToApply)
+    private void ApplyBuff(List<float> stats)
     {
 
        // Debug.Log("Applied Buff");
         //If there is already a buff applied to the player, remove it
-        if (currentBuff != null)
-        {
-            RemoveBuff();
-        }
+       // if (currentBuff != null)
+       // {
+       //     RemoveBuff();
+       // }
 
+
+        currentBuffStats = stats;
         //Apply buff stats
-        currentBuff = buffToApply;
-        this.health += buffToApply.health;
-        this.firerate -= buffToApply.fireRate;
-        this.bulletSpeed += buffToApply.bulletSpeed;
-        buffTime = buffToApply.buffTime;
+        pm.movementSpeed += stats[1];
+        this.health += stats[0];
+        this.firerate -= stats[2];
+        this.bulletSpeed += stats[3];
+        buffTime = stats[4];
         buffTimeElapsed = 0;
 
     }
@@ -191,15 +194,15 @@ public class Player : MonoBehaviour
     private void RemoveBuff()
     {
       //  Debug.Log("Remove Buff");
-        if (currentBuff != null)
+        if (currentBuffStats.Count != 0)
         {
            // this.health -= currentBuff.health;
-            this.firerate += currentBuff.fireRate;
-            this.bulletSpeed -= currentBuff.bulletSpeed;
-            currentBuff = null;
+            this.firerate += currentBuffStats[2];
+            this.bulletSpeed -= currentBuffStats[3];
+            pm.movementSpeed -= currentBuffStats[1];
+            currentBuffStats.Clear();
             buffTime = 0;
             buffTimeElapsed = 0;
         }
     }
-
 }
