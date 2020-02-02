@@ -33,6 +33,15 @@ public class EnemySpawn : MonoBehaviour
             walls.Add(obj.gameObject);
         }
 
+        if(walls.Count <= 0)
+        {
+            Player[] ps = FindObjectsOfType<Player>();
+            foreach (Player obj in ps)
+            {
+                walls.Add(obj.gameObject);
+            }
+        }
+
         spawnTimer = spawnDelay;
     }
 
