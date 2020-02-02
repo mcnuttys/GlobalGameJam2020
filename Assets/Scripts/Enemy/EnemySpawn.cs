@@ -27,8 +27,8 @@ public class EnemySpawn : MonoBehaviour
         walls = new List<GameObject>(); 
 
         //Get all the walls (PLAYERS USED AS PLACEHODLER) and add them to the walls list.
-        Player[] foundObjs = FindObjectsOfType<Player>();
-        foreach (Player obj in foundObjs)
+        DefendablePoints[] foundObjs = FindObjectsOfType<DefendablePoints>();
+        foreach (DefendablePoints obj in foundObjs)
         {
             walls.Add(obj.gameObject);
         }

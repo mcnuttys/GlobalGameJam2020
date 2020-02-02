@@ -165,4 +165,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAge: 2.5
   damage: 0
-  pushFactor: 10
+  pushFactor: 7.5

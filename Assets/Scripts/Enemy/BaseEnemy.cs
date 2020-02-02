@@ -14,6 +14,8 @@ public class BaseEnemy : MonoBehaviour
     protected Vector2 wallPosition;
     protected float pushFactor;
 
+    private float hitTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +30,12 @@ public class BaseEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         currentPosition = new Vector2(transform.position.x, transform.position.y);
+
+        if (hitTimer > 0)
+            hitTimer -= Time.deltaTime;
 
         //check if the enemy is still alive
         Death();
@@ -49,42 +54,56 @@ public class BaseEnemy : MonoBehaviour
         rb.MovePosition(move + currentPosition);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.GetComponent<DefendablePoints>())
+
+        if (hitTimer <= 0)
         {
-            DefendablePoints w = collision.transform.GetComponent<DefendablePoints>();
+            if (collision.transform.parent != null)
+            {
+                if (collision.transform.parent.transform.GetComponent<DefendablePoints>())
+                {
+                    DefendablePoints w = collision.transform.parent.transform.GetComponent<DefendablePoints>();
 
-            w.TakeDamage(10);
+                    w.TakeDamage(10);
 
-            Destroy(gameObject);
+                    health -= 15;
+                }
+            }
+
+            if (collision.transform.GetComponent<Player>())
+            {
+                pushFactor = 5;
+                Player p = collision.transform.GetComponent<Player>();
+                p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
+            }
         }
-
-        if (collision.transform.GetComponent<Player>())
-        {
-            pushFactor = 10;
-            Player p = collision.transform.GetComponent<Player>();
-            p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
-        }
-
     }
 
-    public void OnCollisionStay2D(Collision2D collision)
+    protected void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.transform.GetComponent<DefendablePoints>())
+        if (hitTimer <= 0)
         {
-            DefendablePoints w = collision.transform.GetComponent<DefendablePoints>();
+            if (collision.transform.parent != null)
+            {
+                if (collision.transform.parent.transform.GetComponent<DefendablePoints>())
+                {
+                    DefendablePoints w = collision.transform.parent.transform.GetComponent<DefendablePoints>();
 
-            w.TakeDamage(10);
+                    w.TakeDamage(10);
 
-            health -= 15;
-        }
+                    health -= 15;
+                    hitTimer = 0.25f;
+                }
+            }
 
-        if (collision.transform.GetComponent<Player>())
-        {
-            pushFactor = 10;
-            Player p = collision.transform.GetComponent<Player>();
-            p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
+            if (collision.transform.GetComponent<Player>())
+            {
+                pushFactor = 5;
+                Player p = collision.transform.GetComponent<Player>();
+                p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
+                hitTimer = 0.25f;
+            }
         }
     }
 

@@ -22,21 +22,24 @@ public class RepairBullet : Bullet
     //method so when this bullet hits it repairs health and buildings
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.GetComponent<Wall>()) 
+        if (collision.transform.parent != null)
         {
-            Wall w = collision.transform.GetComponent<Wall>();
+            if (collision.transform.parent.transform.GetComponent<DefendablePoints>())
+            {
+                DefendablePoints dp = collision.transform.parent.transform.GetComponent<DefendablePoints>();
 
-            w.health += 10.0f;
+                dp.Repair(10);
+            }
         }
-        else if(collision.transform.GetComponent<EnemyBullet>())
+        if (collision.transform.GetComponent<EnemyBullet>())
         {
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<DestoryBullet>())
+        if (collision.transform.GetComponent<DestoryBullet>())
         {
             Destroy(gameObject);
         }
-        else if(collision.transform.GetComponent<Wall>())
+        if (collision.transform.GetComponent<Wall>())
         {
             Destroy(gameObject);
         }
