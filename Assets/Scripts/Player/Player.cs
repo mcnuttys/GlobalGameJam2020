@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
 
 
-    [SerializeField] private List<float> currentBuffStats;
+    [SerializeField] private List<float> currentBuffStats = new List<float>();
     float buffTime = 0;
     float buffTimeElapsed = 0;
 
@@ -158,8 +158,9 @@ public class Player : MonoBehaviour
         //Apply Buff
         if (collision.collider.CompareTag("BuffPickup"))
         {
-            Debug.Log("Applied Buff");
+           // Debug.Log("Applied Buff");
             ApplyBuff(collision.collider.gameObject.GetComponent<BuffPickup>().BuffToPickup.GetStats());
+            currentBuffStats = collision.collider.gameObject.GetComponent<BuffPickup>().BuffToPickup.GetStats();
             Destroy(collision.collider.gameObject);
         }
     }
@@ -171,18 +172,24 @@ public class Player : MonoBehaviour
     private void ApplyBuff(List<float> stats)
     {
 
-       // Debug.Log("Applied Buff");
+        // Debug.Log("Applied Buff");
         //If there is already a buff applied to the player, remove it
-       // if (currentBuff != null)
-       // {
-       //     RemoveBuff();
-       // }
+       if (currentBuffStats.Count != 0)
+       {
+           RemoveBuff();
+       }
+        for (int i = 0; i < stats.Count; i++)
+        {
+            currentBuffStats.Add(stats[i]);
+        }
 
-
-        currentBuffStats = stats;
+        //currentBuffStats = stats;
         //Apply buff stats
+        if(this.health + stats[0] <= 100f)
+        {
+            this.health += stats[0];
+        }
         pm.movementSpeed += stats[1];
-        this.health += stats[0];
         this.firerate -= stats[2];
         this.bulletSpeed += stats[3];
         buffTime = stats[4];
