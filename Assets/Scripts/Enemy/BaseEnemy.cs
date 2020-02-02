@@ -51,11 +51,11 @@ public class BaseEnemy : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.GetComponent<Wall>())
+        if(collision.transform.GetComponent<DefendablePoints>())
         {
-            Wall w = collision.transform.GetComponent<Wall>();
+            DefendablePoints w = collision.transform.GetComponent<DefendablePoints>();
 
-            w.health -= 10.0f;
+            w.TakeDamage(10);
 
             Destroy(gameObject);
         }
@@ -67,6 +67,25 @@ public class BaseEnemy : MonoBehaviour
             p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
         }
 
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.GetComponent<DefendablePoints>())
+        {
+            DefendablePoints w = collision.transform.GetComponent<DefendablePoints>();
+
+            w.TakeDamage(10);
+
+            health -= 15;
+        }
+
+        if (collision.transform.GetComponent<Player>())
+        {
+            pushFactor = 10;
+            Player p = collision.transform.GetComponent<Player>();
+            p.GetComponent<Rigidbody2D>().AddForce((p.transform.position - transform.position).normalized * pushFactor / Time.deltaTime);
+        }
     }
 
     public void Death()
